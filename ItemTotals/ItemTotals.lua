@@ -174,9 +174,11 @@ ItemTotals:SetScript("OnEvent", function(self, event)
     elseif event == "GUILDBANKBAGSLOTS_CHANGED" then
         ScanGuildBank()  -- Update scan when items are moved in/out of the guild bank
     elseif event == "BAG_UPDATE" then
+		ScanEquippedItems()
         ScanBags()  -- Update scan when inventory changes
     elseif event == "EQUIPMENT_SLOT_CHANGED" then
         ScanEquippedItems()  -- Scan equipped items when the player equips or unequips an item
+		ScanBags()
 	elseif event == "PLAYER_LOGIN" then
         LoadSavedData()  -- Load saved data when logging in
         ScanEquippedItems()  -- Scan equipped items on login
