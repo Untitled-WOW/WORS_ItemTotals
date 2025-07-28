@@ -2,7 +2,7 @@
 ## Title: Item Totals
 ## Notes: Shows the total number of items in players bag / bank / equiped on tooltip.|nHold Shift to show full breakdown of items.
 ## Author: Untitled - Discord@Llama69420
-## Version: 1.0
+## Version: 1.1
 ## DefaultState: disabled
 
 ## SavedVariablesPerCharacter: ItemTotalsDB

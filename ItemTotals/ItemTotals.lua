@@ -80,15 +80,14 @@ local function ScanBags()
 end
 
 local function ScanEquippedItems()
-        wipe(ItemTotalsDB.equippedTotals)
+    wipe(ItemTotalsDB.equippedTotals)
     for slot = 1, 19 do
         local link = GetInventoryItemLink("player", slot)
         if link then
             local itemName = GetItemInfo(link)
-            local itemCount = 1  -- equiped always 1 need test and prob find workaround for darts / knifes  
-            if itemName then
-                -- Store the count of equipped items
-                ItemTotalsDB.equippedTotals[itemName] = (ItemTotalsDB.equippedTotals[itemName] or 0) + itemCount 
+            local itemCount = GetInventoryItemCount("player", slot) or 1
+            if itemName and itemCount > 0 then
+                ItemTotalsDB.equippedTotals[itemName] = (ItemTotalsDB.equippedTotals[itemName] or 0) + itemCount
             end
         end
     end
